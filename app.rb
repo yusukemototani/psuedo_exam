@@ -4,7 +4,11 @@ require 'sinatra/reloader' if development?
 require 'sinatra/activerecord'
 require './models'
 
-get '/' do
+before do
+    @my_name = '<あなたのアダ名に変更する>'
+    @categories = Category.all
+end
 
+get '/' do
     erb :index
 end
