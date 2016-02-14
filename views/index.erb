@@ -1,9 +1,9 @@
-<form class="pure-form">
+<form class="pure-form" action="/create" method="post">
   <fieldset>
     <legend>新しいメモを追加</legend>
 
-    <input type="text" placeholder="タイトル">
-    <input type="text" placeholder="内容">
+    <input type="text" name="title" id="title" placeholder="タイトル">
+    <input type="text" name="comment" id="comment" placeholder="内容">
 
     <label for="categories">カテゴリ</label>
     <select id="categories">
@@ -14,19 +14,22 @@
   </fieldset>
 </form>
 
+<div>
+  <% @memos.each do |memo| %>
+
 <div class="ui cards">
   <div class="ui card">
     <div class="content">
       <div class="header">
-        <メモ1のタイトル>
+        <%= memo.title %>
       </div>
       <div class="meta">
-        <メモ1のカテゴリ>
+        <カテゴリ>
       </div>
     </div>
     <div class="content">
       <div class="description">
-        <メモ1の内容>
+        <%= memo.comment %>
       </div>
     </div>
     <div class="extra content">
@@ -34,42 +37,8 @@
       <button class="ui button"><a href="#">Delete</a></button>
     </div>
   </div>
-  <div class="ui card">
-    <div class="content">
-      <div class="header">
-        <メモ2のタイトル>
-      </div>
-      <div class="meta">
-        <メモ2のカテゴリ>
-      </div>
-    </div>
-    <div class="content">
-      <div class="description">
-        <メモ2の内容>
-      </div>
-    </div>
-    <div class="extra content">
-      <button class="ui button"><a href="#">Edit</a></button>
-      <button class="ui button"><a href="#">Delete</a></button>
-    </div>
+  
+  <% end %>
   </div>
-  <div class="ui card">
-    <div class="content">
-      <div class="header">
-        <メモ3のタイトル>
-      </div>
-      <div class="meta">
-        <メモ3のカテゴリ>
-      </div>
-    </div>
-    <div class="content">
-      <div class="description">
-        <メモ3の内容>
-      </div>
-    </div>
-    <div class="extra content">
-      <button class="ui button"><a href="#">Edit</a></button>
-      <button class="ui button"><a href="#">Delete</a></button>
-    </div>
-  </div>
-</div>
+  
+  
