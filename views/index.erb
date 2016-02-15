@@ -35,8 +35,19 @@
       </div>
     </div>
     <div class="extra content">
-      <button class="ui button"><a href="#">Edit</a></button>
-      <button class="ui button"><a href="#">Delete</a></button>
+      
+      <span>
+        <form action="/delete/<%= memo.id %>" method="post">
+          <button class="ui button"><a href="#">Edit</a></button>
+        </form>
+      </span>
+      
+      <span>
+        <form action="/delete/<%= memo.id %>" method="post">
+          <button class="ui button"><a href="#">Delete</a></button>
+        </form>
+      </span>
+      
     </div>
   </div>
   

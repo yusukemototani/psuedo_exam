@@ -24,3 +24,22 @@ post '/create' do
     
     redirect '/'
 end
+
+post '/delete/:id' do
+    Memo.find(params[:id]).destroy
+    redirect '/'
+end
+
+post '/edit/:id' do
+    @memo = Memo.find(params[:id])
+    erb :edit
+end
+
+post '/renew/:id' do
+    @memo = Memo.find(params[:id])
+    @memo.update({
+        title: params[:title],
+        comment: params[:comment]
+    })
+    redirect '/'
+end

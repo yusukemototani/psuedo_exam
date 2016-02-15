@@ -1,14 +1,18 @@
 <form class="pure-form">
     <fieldset>
         <legend>メモの編集</legend>
+        
+    <form action="/renew/<%= @memo.id %>" method="post">
 
-        <input type="text" placeholder="タイトル">
-        <input type="text" placeholder="内容">
+        <input type="text" name="title" value="<%= @memo.title %>">
+        <input type="text" name="comment" value="<% @memo.comment %>">
 
         <label for="categories">カテゴリ</label>
         <select id="categories" name="category">
             <option></option>
         </select>
         <button type="submit" class="pure-button pure-button-primary">更新</button>
+        
+    </form>
     </fieldset>
 </form>
