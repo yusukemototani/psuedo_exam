@@ -6,8 +6,10 @@
     <input type="text" name="comment" id="comment" placeholder="内容">
 
     <label for="categories">カテゴリ</label>
-    <select id="categories">
-      <option></option>
+    <select name="category" id="category">
+      <% @categories.each do |category| %>
+      <option value="<%= category.id %>"><%= category.name %></option>
+      <% end %>
     </select>
 
     <button type="submit" class="pure-button pure-button-primary">追加</button>
@@ -24,7 +26,7 @@
         <%= memo.title %>
       </div>
       <div class="meta">
-        <カテゴリ>
+        <%= memo.category.try(:name) %>
       </div>
     </div>
     <div class="content">

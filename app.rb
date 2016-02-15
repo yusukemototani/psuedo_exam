@@ -11,13 +11,15 @@ end
 
 get '/' do
     @memos = Memo.all
+    @categories = Category.all
     erb :index
 end
 
 post '/create' do
     Memo.create({
         title: params[:title],
-        comment: params[:comment]
+        comment: params[:comment],
+        category_id: params[:category]
     })
     
     redirect '/'
