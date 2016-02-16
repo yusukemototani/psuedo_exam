@@ -8,7 +8,7 @@
     <label for="categories">カテゴリ</label>
     <select name="category" id="category">
       <% @categories.each do |category| %>
-      <option value="<%= category.id %>"><%= category.name %></option>
+        <option value="<%= category.id %>"><%= category.name %></option>
       <% end %>
     </select>
 
@@ -40,23 +40,22 @@
       </div>
     </div>
     <div class="extra content">
-      
       <span>
-        <form action="/delete/<%= memo.id %>" method="post">
-          <button class="ui button"><a href="#">Edit</a></button>
+        <form action="/edit/<%= memo.id %>" method="post">
+          <button class="ui button">Edit</button>
         </form>
       </span>
-      
       <span>
         <form action="/delete/<%= memo.id %>" method="post">
-          <button class="ui button"><a href="#">Delete</a></button>
+          <button class="ui button">Delete</button>
         </form>
       </span>
-      
     </div>
-    </div>
-   <% end %> 
   </div>
+  
+  <% end %>
+  
+</div>
 
   
   

@@ -1,18 +1,17 @@
-<form class="pure-form">
+<form class="pure-form" action="/renew/<%= @memo.id %>" method="post">
     <fieldset>
         <legend>メモの編集</legend>
-        
-    <form action="/renew/<%= @memo.id %>" method="post">
 
         <input type="text" name="title" value="<%= @memo.title %>">
-        <input type="text" name="comment" value="<% @memo.comment %>">
+        <input type="text" name="comment" value="<%= @memo.comment %>">
 
         <label for="categories">カテゴリ</label>
         <select id="categories" name="category">
-            <option></option>
+            <% @categories.each do |category| %>
+                <option value="<%= category.id %>"><%= category.name %></option>
+            <% end %>
         </select>
         <button type="submit" class="pure-button pure-button-primary">更新</button>
-        
-    </form>
+
     </fieldset>
 </form>
