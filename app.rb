@@ -43,3 +43,11 @@ post '/renew/:id' do
     })
     redirect '/'
 end
+
+get '/category/:id' do
+    @categories = Category.all
+    @category = Category.find(params[:id])
+    @category_name = @category.name
+    @memos = @category.memos
+    erb :index
+end

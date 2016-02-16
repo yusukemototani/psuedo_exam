@@ -168,42 +168,11 @@
         <div class="pure-menu pure-menu-horizontal pure-menu-scrollable custom-menu custom-menu-bottom custom-menu-tucked" id="tuckedMenu">
             <div class="custom-menu-screen"></div>
             <ul class="pure-menu-list">
+                <% @categories.each do |category| %>
                 <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">
-                        programming
-                    </a>
+                    <a href="/category/<%= category.id %>" class="pure-menu-link"><%= category.name %></a>
                 </li>
-                
-                <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">
-                        design
-                    </a>
-                </li>
-                
-                <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">
-                        job hunting
-                    </a>
-                </li>
-                
-                <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">
-                        reseach
-                    </a>
-                </li>
-                
-                <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">
-                        tennis
-                    </a>
-                </li>
-                
-                <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">
-                        another
-                    </a>
-                </li>
-                
+                <% end %>
             </ul>
         </div>
     </div>
