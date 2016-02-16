@@ -16,10 +16,12 @@
   </fieldset>
 </form>
 
-<div>
-  <% @memos.each do |memo| %>
+
 
 <div class="ui cards">
+  
+  <% @memos.each do |memo| %>
+  
   <div class="ui card">
     <div class="content">
       <div class="header">
@@ -49,9 +51,9 @@
       </span>
       
     </div>
+    </div>
+   <% end %> 
   </div>
-  
-  <% end %>
-  </div>
+
   
   
